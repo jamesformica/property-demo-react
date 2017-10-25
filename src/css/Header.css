@@ -1,0 +1,40 @@
+.header {
+    width: 100%;
+    height: 200px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logoimg {
+    height: 60px;
+}
+
+.header-heading {
+    margin: 0 0 0 20px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: black;
+}
+
+.header-heading-alt {
+    color: #4fd1d9;
+}
+
+.header-tagline {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.8;    
+}
