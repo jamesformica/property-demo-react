@@ -18,7 +18,7 @@ class PropertyColumn extends Component {
 }
 
 PropertyColumn.propTypes = {
-    extraClass: PropTypes.string.isRequired,
+    extraClass: PropTypes.string,
     heading: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     properties: PropTypes.array.isRequired,
