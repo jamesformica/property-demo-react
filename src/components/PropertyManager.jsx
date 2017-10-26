@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import '../css/Results.css';
 import Data from '../Data';
 import PropertyColumn from './PropertyColumn';
+import { canBeSaved } from '../helpers';
+import '../css/Results.css';
 
 class PropertyManager extends Component {
-    componentWillMount() {
-        var data = new Data().data;
+    constructor() {
+        super();
 
-        this.setState({
+        var data = new Data().data;
+        this.state = {
             results: data.results,
             saved: data.saved
-        });
+        };
     }
 
     render() {
@@ -36,12 +38,13 @@ class PropertyManager extends Component {
     }
 
     addToSaved(propertyToAdd) {
-        if (this.canBeSaved(propertyToAdd)) {
+        if (canBeSaved(propertyToAdd, this.state.saved)) {
             var props = this.state.saved.concat(propertyToAdd);
 
             this.setState({
                 saved: props
             });
+
             return true;
         }
         return false;
@@ -57,14 +60,6 @@ class PropertyManager extends Component {
         });
 
         return true;
-    }
-
-    canBeSaved(propertyToAdd) {
-        var existing = this.state.saved.find((property) => {
-            return property.id === propertyToAdd.id
-        });
-
-        return existing === null || existing === undefined;
     }
 }
 

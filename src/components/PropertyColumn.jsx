@@ -12,17 +12,10 @@ class PropertyColumn extends Component {
                     {this.props.title}
                 </p>
                 {this.props.properties.map((property) =>
-                    <Property property={property} isAddMode={this.props.isAddMode} key={property.id} clickEvent={this.click.bind(this)} />
+                    <Property property={property} isAddMode={this.props.isAddMode} key={property.id} clickEvent={this.props.clickEvent} />
                 )}
             </section>
         )
-    }
-
-    click(property) {
-        if (typeof this.props.clickEvent === 'function') {
-            return this.props.clickEvent(property);
-        }
-        return false;
     }
 }
 
