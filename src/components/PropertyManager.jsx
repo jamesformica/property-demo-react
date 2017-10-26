@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Data from '../Data';
+import { getData } from '../data';
 import PropertyColumn from './PropertyColumn';
 import { canBeSaved } from '../helpers';
 import '../css/Results.css';
@@ -8,7 +8,7 @@ class PropertyManager extends Component {
     constructor() {
         super();
 
-        var data = new Data().data;
+        var data = getData();
         this.state = {
             results: data.results,
             saved: data.saved
