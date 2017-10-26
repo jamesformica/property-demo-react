@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NavigationLink extends Component {
     render() {
@@ -8,6 +9,12 @@ class NavigationLink extends Component {
             </a>
         )
     }
+}
+
+NavigationLink.propTypes = {
+    text: PropTypes.string.isRequired,
+    alert: PropTypes.string.isRequired,
+    extraClass: PropTypes.string
 }
 
 export default NavigationLink;

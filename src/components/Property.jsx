@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../css/Property.css';
 
 class Property extends Component {
@@ -48,6 +49,12 @@ class Property extends Component {
             });
         }
     }
+}
+
+Property.propTypes = {
+    property: PropTypes.object.isRequired,
+    isAddMode: PropTypes.bool.isRequired,
+    clickEvent: PropTypes.func.isRequired
 }
 
 export default Property;

@@ -19,17 +19,17 @@ class PropertyManager extends Component {
         return (
             <div className="results-container">
                 <PropertyColumn
-                    extraClass={"results-container-column-grow"}
-                    heading={"Results"}
+                    extraClass="results-container-column-grow"
+                    heading="Results"
                     title={"Select \"add property\" to move the property to your saved collection"}
                     properties={this.state.results}
                     isAddMode={true}
                     clickEvent={this.addToSaved.bind(this)} />
 
                 <PropertyColumn
-                    extraClass={"results-container-column-saved"}
-                    heading={"Saved Properties"}
-                    title={"Your collection of saved properties"}
+                    extraClass="results-container-column-saved"
+                    heading="Saved Properties"
+                    title="Your collection of saved properties"
                     properties={this.state.saved}
                     isAddMode={false}
                     clickEvent={this.removeFromSaved.bind(this)} />
