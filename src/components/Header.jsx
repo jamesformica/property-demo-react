@@ -20,9 +20,18 @@ class Header extends Component {
         this.props.clearResults();
     }
 
+    onFocus() {
+        this.headerBg.classList.add("header-bg-blur");
+    }
+
+    onBlur() {
+        this.headerBg.classList.remove("header-bg-blur");
+    }
+
     render() {
         return (
-            <header className="header" style={{ backgroundImage: `url(${bg})` }}>
+            <header className="header">
+                <div className="header-bg" style={{ backgroundImage: `url(${bg})` }} ref={(bg) => this.headerBg = bg}></div>
                 <div className="header-logo">
                     <img className="header-logoimg" src={logo} alt="logo" />
                     <h1 className="header-heading">4RealEstate
@@ -33,8 +42,16 @@ class Header extends Component {
                     </h1>
                 </div>
                 <span className="header-tagline">"yes, we are 4real"</span>
-                <div className="header-search">
-                    <input className="header-search-input" ref={(input) => this.searchInput = input } onChange={this.search.bind(this)} type="text" placeholder="Search for Properties..." />
+                <div className="header-search" tabIndex="0">
+                    <input
+                        className="header-search-input"
+                        type="text"
+                        placeholder="Search for Properties..."
+                        ref={(input) => this.searchInput = input }
+                        onChange={this.search.bind(this)}
+                        onFocus={this.onFocus.bind(this)}
+                        onBlur={this.onBlur.bind(this)}
+                    />
                     <button className="header-search-button" type="button" onClick={this.clear.bind(this)}>Clear</button>
                 </div>
             </header>
