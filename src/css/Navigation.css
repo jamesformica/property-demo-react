@@ -24,7 +24,7 @@
     text-decoration: underline;
 }
 
-.navigation-hamburger {
+.navigationHamburger {
     transform: rotate(90deg);
     font-weight: bold;
     color: white;
